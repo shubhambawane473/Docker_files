@@ -1,0 +1,14 @@
+# Use the official Nginx base image
+FROM nginx:latest
+
+# Set the maintainer label (optional)
+LABEL maintainer="your_email@example.com"
+
+# Copy custom HTML content into the default Nginx directory
+COPY ./index.html /usr/share/nginx/html/
+
+# Expose port 80 for HTTP traffic
+EXPOSE 80
+
+# Start Nginx when the container runs
+CMD ["nginx", "-g", "daemon off;"]
